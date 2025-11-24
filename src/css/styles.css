@@ -1,0 +1,534 @@
+/* ========================================
+   Thais Terra Cake Shop - Custom Styles
+   Mobile-First Responsive Design
+   ======================================== */
+
+/* ========================================
+   CSS Custom Properties (Variables)
+   ======================================== */
+:root {
+    /* Color Palette - Luxury Brand */
+    --color-primary: #8B7355;        /* Warm Brown */
+    --color-primary-dark: #6B5444;   /* Dark Brown */
+    --color-accent: #D4AF37;         /* Gold */
+    --color-light: #F5F1ED;          /* Cream */
+    --color-dark: #2C2416;           /* Deep Brown */
+    --color-white: #FFFFFF;
+    --color-overlay: rgba(44, 36, 22, 0.5);
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 5rem;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-dark);
+    background-color: var(--color-white);
+    overflow-x: hidden;
+}
+
+/* ========================================
+   Typography
+   ======================================== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ========================================
+   Navigation
+   ======================================== */
+.navbar {
+    background-color: transparent;
+    transition: background-color var(--transition-normal);
+    padding: var(--spacing-sm) 0;
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    background-color: rgba(44, 36, 22, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-md);
+}
+
+.navbar-brand {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    transition: transform var(--transition-fast);
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.brand-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.brand-tagline {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: var(--color-accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--color-white) !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: var(--spacing-xs) var(--spacing-sm) !important;
+    margin: 0 var(--spacing-xs);
+    position: relative;
+    transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: all var(--transition-normal);
+    transform: translateX(-50%);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--color-accent) !important;
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after {
+    width: 80%;
+}
+
+/* Mobile Navigation */
+.navbar-toggler {
+    border-color: var(--color-accent);
+    padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(212, 175, 55, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ========================================
+   Hero Section
+   ======================================== */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity var(--transition-slow);
+}
+
+.hero-video.active {
+    opacity: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(44, 36, 22, 0.3) 0%,
+        rgba(44, 36, 22, 0.6) 100%
+    );
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: 2px;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--color-light);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
+
+/* ========================================
+   Section Shared Styles
+   ======================================== */
+section {
+    position: relative;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-primary-dark);
+    font-weight: 300;
+    max-width: 600px;
+}
+
+.section-divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(
+        to right,
+        var(--color-accent),
+        var(--color-primary)
+    );
+    margin: var(--spacing-sm) 0;
+}
+
+/* ========================================
+   About Section
+   ======================================== */
+.about-section {
+    background-color: var(--color-white);
+}
+
+.about-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.chef-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.chef-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.chef-image-wrapper:hover .chef-image {
+    transform: scale(1.05);
+}
+
+/* ========================================
+   Menu Section
+   ======================================== */
+.menu-section {
+    background-color: var(--color-light);
+}
+
+.menu-card {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.menu-card-image {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.menu-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.menu-card:hover .menu-card-image img {
+    transform: scale(1.1);
+}
+
+.menu-card-body {
+    padding: var(--spacing-md);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.menu-card-description {
+    font-size: 0.95rem;
+    color: var(--color-dark);
+    line-height: 1.7;
+    flex: 1;
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+.footer {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+
+.footer-text {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
+    color: rgba(245, 241, 237, 0.7);
+    margin: 0;
+}
+
+/* ========================================
+   Responsive Design - Tablet
+   ======================================== */
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .section-title {
+        font-size: 3rem;
+    }
+
+    .about-text {
+        font-size: 1.1rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+}
+
+/* ========================================
+   Responsive Design - Desktop
+   ======================================== */
+@media (min-width: 992px) {
+    .hero-title {
+        font-size: 4.5rem;
+        letter-spacing: 4px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .section-title {
+        font-size: 3.5rem;
+    }
+
+    .brand-name {
+        font-size: 1.8rem;
+    }
+
+    .brand-tagline {
+        font-size: 0.85rem;
+    }
+
+    /* Larger spacing on desktop */
+    .py-5 {
+        padding-top: var(--spacing-xl) !important;
+        padding-bottom: var(--spacing-xl) !important;
+    }
+}
+
+/* ========================================
+   Accessibility
+   ======================================== */
+/* Focus styles for keyboard navigation */
+a:focus,
+button:focus,
+.nav-link:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* Skip to content link for screen readers */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-accent);
+    color: var(--color-dark);
+    padding: 8px;
+    text-decoration: none;
+    z-index: 9999;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+.text-accent {
+    color: var(--color-accent);
+}
+
+.bg-primary-light {
+    background-color: var(--color-light);
+}
+
+/* ========================================
+   Animation Classes
+   ======================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[data-aos] {
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+[data-aos="fade-up"].aos-animate {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+[data-aos="fade-right"].aos-animate {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+[data-aos="fade-left"].aos-animate {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+@media print {
+    .navbar,
+    .footer,
+    .hero-section {
+        display: none;
+    }
+
+    body {
+        color: #000;
+        background: #fff;
+    }
+}

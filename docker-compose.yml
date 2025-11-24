@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: thaisterra-website
+    ports:
+      - "8080:80"
+    volumes:
+      # Mount source files for development (comment out for production)
+      - ./src:/usr/share/nginx/html:ro
+      # Mount assets directory
+      - ./src/assets:/usr/share/nginx/html/assets:ro
+    restart: unless-stopped
+    networks:
+      - thaisterra-network
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
+    labels:
+      - "com.thaisterra.description=Thais Terra Cake Shop Website"
+      - "com.thaisterra.version=1.0.0"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  thaisterra-network:
+    driver: bridge
+    name: thaisterra-network
+
+# Optional: Add volumes for persistent storage if needed
+# volumes:
+#   assets-data:
+#     driver: local

@@ -1,0 +1,171 @@
+# Thais Terra Cake Shop - Git Ignore File
+
+# ========================================
+# Operating System Files
+# ========================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ========================================
+# IDE and Editor Files
+# ========================================
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs (IntelliJ, WebStorm, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.*.sw[a-p]
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ========================================
+# Build and Dependency Directories
+# ========================================
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log*
+
+# ========================================
+# Temporary and Cache Files
+# ========================================
+
+# General
+*.tmp
+*.temp
+*.log
+*.cache
+.cache/
+
+# ========================================
+# Docker
+# ========================================
+
+# Don't ignore Dockerfile and docker-compose.yml
+# But ignore Docker volumes and temporary files
+docker-compose.override.yml
+.dockerignore
+
+# ========================================
+# Assets - Uncomment if using Git LFS
+# ========================================
+
+# Large media files (uncomment if needed)
+# src/assets/videos/*.mp4
+# src/assets/videos/*.webm
+# src/assets/images/**/*.jpg
+# src/assets/images/**/*.png
+
+# ========================================
+# Production and Deployment
+# ========================================
+
+# Compressed/minified files (if generated)
+*.min.css
+*.min.js
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.*.local
+
+# ========================================
+# Backup Files
+# ========================================
+
+*.bak
+*.backup
+*.old
+*-backup
+*-old
+
+# ========================================
+# Project Specific
+# ========================================
+
+# Temporary development files
+src/assets/images/temp/
+src/assets/videos/temp/
+claudedocs/temp/
+
+# Testing and debugging
+test-results/
+coverage/
+.nyc_output/
+
+# ========================================
+# Security
+# ========================================
+
+# SSL certificates (if stored locally)
+*.key
+*.pem
+*.crt
+*.cer
+
+# Credentials
+credentials.json
+secrets.json
+
+# ========================================
+# Miscellaneous
+# ========================================
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z

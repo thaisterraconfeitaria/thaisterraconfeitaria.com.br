@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thais Terra Cake Shop - Bolos e doces artesanais de alto nível para eventos comemorativos exclusivos">
+    <meta name="keywords" content="bolos artesanais, confeitaria de luxo, eventos, Thais Terra">
+    <meta name="author" content="Thais Terra">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Thais Terra Cake Shop">
+    <meta property="og:description" content="Bolos e doces artesanais de alto nível para eventos exclusivos">
+    <meta property="og:type" content="website">
+
+    <title>Thais Terra Cake Shop | Confeitaria de Luxo</title>
+
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <span class="brand-name">Thais Terra</span>
+                <span class="brand-tagline">Cake Shop</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cardapio">Cardápio</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Video Carousel -->
+    <section id="home" class="hero-section">
+        <div class="video-container">
+            <!-- Video elements will be managed by JavaScript -->
+            <video class="hero-video active" muted playsinline>
+                <source src="assets/videos/video1.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos HTML5.
+            </video>
+            <video class="hero-video" muted playsinline>
+                <source src="assets/videos/video2.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos HTML5.
+            </video>
+            <video class="hero-video" muted playsinline>
+                <source src="assets/videos/video3.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos HTML5.
+            </video>
+        </div>
+
+        <div class="hero-overlay">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12 text-center">
+                        <h1 class="hero-title" data-aos="fade-up">Confeitaria de Luxo</h1>
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Criações artesanais para momentos inesquecíveis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="about-section py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <h2 class="section-title">Sobre Thais Terra</h2>
+                    <div class="section-divider"></div>
+                    <p class="about-text">
+                        Com anos de experiência em confeitaria de alto nível, a chef Thais Terra
+                        dedica-se a criar bolos e doces artesanais exclusivos para eventos comemorativos
+                        que merecem ser eternizados.
+                    </p>
+                    <p class="about-text">
+                        Cada criação é única, desenvolvida com ingredientes selecionados e técnicas
+                        sofisticadas, transformando momentos especiais em experiências gastronômicas
+                        inesquecíveis.
+                    </p>
+                    <p class="about-text">
+                        Do planejamento à execução, cada detalhe é pensado para refletir a
+                        personalidade e o significado de cada celebração, garantindo não apenas
+                        um bolo, mas uma obra de arte comestível.
+                    </p>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="chef-image-wrapper">
+                        <img src="assets/images/chef-thais-terra.jpg"
+                             alt="Chef Thais Terra"
+                             class="img-fluid rounded-3 shadow-lg chef-image"
+                             onerror="this.src='https://via.placeholder.com/600x700/8B7355/FFFFFF?text=Chef+Thais+Terra'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="cardapio" class="menu-section py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title" data-aos="fade-up">Nosso Cardápio</h2>
+                    <div class="section-divider mx-auto"></div>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        Criações exclusivas para tornar seu evento ainda mais especial
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Wedding Cakes -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="menu-card">
+                        <div class="menu-card-image">
+                            <img src="assets/images/menu-items/wedding-cake.jpg"
+                                 alt="Bolos de Casamento"
+                                 class="img-fluid"
+                                 onerror="this.src='https://via.placeholder.com/400x300/D4AF37/FFFFFF?text=Bolos+de+Casamento'">
+                        </div>
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Bolos de Casamento</h3>
+                            <p class="menu-card-description">
+                                Criações elegantes e sofisticadas para celebrar o amor.
+                                Designs personalizados que refletem a personalidade do casal.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Birthday Cakes -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="menu-card">
+                        <div class="menu-card-image">
+                            <img src="assets/images/menu-items/birthday-cake.jpg"
+                                 alt="Bolos de Aniversário"
+                                 class="img-fluid"
+                                 onerror="this.src='https://via.placeholder.com/400x300/C0A080/FFFFFF?text=Bolos+de+Aniversário'">
+                        </div>
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Bolos de Aniversário</h3>
+                            <p class="menu-card-description">
+                                Do clássico ao contemporâneo, bolos que marcam cada ano
+                                de vida com sabor e estilo únicos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commemorative Events -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="menu-card">
+                        <div class="menu-card-image">
+                            <img src="assets/images/menu-items/commemorative-cake.jpg"
+                                 alt="Eventos Comemorativos"
+                                 class="img-fluid"
+                                 onerror="this.src='https://via.placeholder.com/400x300/8B7355/FFFFFF?text=Eventos+Comemorativos'">
+                        </div>
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Eventos Comemorativos</h3>
+                            <p class="menu-card-description">
+                                Formaturas, batizados, bodas e celebrações especiais
+                                merecem doces à altura do momento.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Sweets -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="menu-card">
+                        <div class="menu-card-image">
+                            <img src="assets/images/menu-items/custom-sweets.jpg"
+                                 alt="Doces Personalizados"
+                                 class="img-fluid"
+                                 onerror="this.src='https://via.placeholder.com/400x300/A0826D/FFFFFF?text=Doces+Personalizados'">
+                        </div>
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Doces Personalizados</h3>
+                            <p class="menu-card-description">
+                                Brigadeiros gourmet, macarons franceses e doces finos
+                                que complementam perfeitamente sua celebração.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cupcakes -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="menu-card">
+                        <div class="menu-card-image">
+                            <img src="assets/images/menu-items/cupcakes.jpg"
+                                 alt="Cupcakes Gourmet"
+                                 class="img-fluid"
+                                 onerror="this.src='https://via.placeholder.com/400x300/B8956A/FFFFFF?text=Cupcakes+Gourmet'">
+                        </div>
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Cupcakes Gourmet</h3>
+                            <p class="menu-card-description">
+                                Pequenas delícias com sabores intensos e decorações
+                                artísticas para todos os tipos de eventos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert Tables -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="menu-card">
+                        <div class="menu-card-image">
+                            <img src="assets/images/menu-items/dessert-table.jpg"
+                                 alt="Mesas de Sobremesas"
+                                 class="img-fluid"
+                                 onerror="this.src='https://via.placeholder.com/400x300/D4A574/FFFFFF?text=Mesas+de+Sobremesas'">
+                        </div>
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Mesas de Sobremesas</h3>
+                            <p class="menu-card-description">
+                                Composições completas e harmoniosas que impressionam
+                                visualmente e encantam o paladar.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="footer-text mb-2">
+                        <strong>Thais Terra Cake Shop</strong> - Confeitaria de Luxo
+                    </p>
+                    <p class="footer-copyright">
+                        &copy; <span id="currentYear"></span> Todos os direitos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
