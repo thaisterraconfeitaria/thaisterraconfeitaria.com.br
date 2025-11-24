@@ -149,14 +149,41 @@ docker-compose up -d
 
 ```bash
 # View logs
-docker-compose logs -f
+docker logs thaisterra-website -f
+
+# Check container status
+docker ps --filter "name=thaisterra"
 
 # Stop the container
-docker-compose down
+docker stop thaisterra-website
+
+# Restart the container
+docker restart thaisterra-website
 
 # Rebuild after changes
 docker-compose up -d --build
+
+# Remove container
+docker rm -f thaisterra-website
 ```
+
+### File Permissions (Important!)
+
+When mounting local files with Docker volumes, ensure proper permissions:
+
+```bash
+# Set correct permissions for web files
+chmod -R 755 src/
+chmod 644 src/index.html src/css/styles.css src/js/main.js
+
+# Verify permissions
+ls -la src/
+```
+
+**Common Permission Issue:** If you encounter `403 Forbidden` errors, check that:
+- Directory permissions are `755` (drwxr-xr-x)
+- File permissions are `644` (-rw-r--r--)
+- Files are readable by nginx user
 
 ## 📝 Adding Content
 
